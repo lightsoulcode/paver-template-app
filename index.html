@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paver Template Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      width: 400px;
+      margin: 10% auto;
+      background-color: rgba(255, 255, 255, 0.5); /* 50% translucent */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    select, input[type="file"], button {
+      margin: 15px 0;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #004999;
+    }
+  </style>
+</head>
+<body>
+  <form action="/process" method="post" enctype="multipart/form-data" class="container">
+    <h2>Generate Paver Template</h2>
+    <select name="action" required>
+      <option value="">Select Template Type</option>
+      <option value="Name">Name</option>
+      <option value="Category">Category</option>
+      <option value="Status">Status</option>
+      <option value="Location">Location</option>
+    </select>
+    <input type="file" name="excel_file" accept=".xlsx" required />
+    <button type="submit">Generate CSV</button>
+  </form>
+</body>
+</html>
